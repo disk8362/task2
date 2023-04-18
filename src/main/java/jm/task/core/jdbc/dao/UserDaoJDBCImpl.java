@@ -42,7 +42,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.executeUpdate();
             System.out.println("User с именем - " + name + " добавлен в базу данных");
         } catch (SQLException e) {
-            if (connection==null){
+            if (connection!=null){
                 connection.rollback();
             }
             e.printStackTrace();
@@ -57,7 +57,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement.setByte(1, (byte) id);
             statement.executeUpdate();
         } catch (SQLException e) {
-            if (connection==null){
+            if (connection!=null){
                 connection.rollback();
             }
             e.printStackTrace();
@@ -80,7 +80,7 @@ public class UserDaoJDBCImpl implements UserDao {
             }
             System.out.println(userList);
         } catch (SQLException e) {
-            if (connection==null){
+            if (connection!=null){
                 connection.rollback();
             }
             e.printStackTrace();
@@ -93,7 +93,7 @@ public class UserDaoJDBCImpl implements UserDao {
             statement = connection.createStatement();
             statement.executeUpdate("DELETE FROM Users");
         } catch (SQLException e) {
-            if (connection==null){
+            if (connection!=null){
                 connection.rollback();
             }
             e.printStackTrace();
