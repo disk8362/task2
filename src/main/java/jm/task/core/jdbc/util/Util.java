@@ -1,4 +1,5 @@
 package jm.task.core.jdbc.util;
+
 import jm.task.core.jdbc.model.User;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -7,12 +8,19 @@ import org.hibernate.cfg.Environment;
 import org.hibernate.service.ServiceRegistry;
 
 import java.util.Properties;
+
 public class Util {
+
     private static final String DB_DRIVER = "com.mysql.cj.jdbc.Driver";
+
     private static final String DB_URL = "jdbc:mysql://localhost:3306/mydb";
+
     private static final String DB_USERNAME = "root";
+
     private static final String DB_PASSWORD = "admin";
+
     private static SessionFactory sessionFactory;
+
     public static SessionFactory getSessionFactory() {
         if (sessionFactory == null) {
             try {
